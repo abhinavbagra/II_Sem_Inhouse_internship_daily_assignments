@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Agency Landing Page</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f7fb;
+color:#333;
+}
+
+header{
+background:#0f172a;
+position:fixed;
+width:100%;
+top:0;
+left:0;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+.logo{
+color:white;
+font-size:28px;
+font-weight:bold;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+color:white;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:white;
+color:#2563eb;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+section{
+padding:90px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:38px;
+margin-bottom:50px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#2563eb;
+}
+
+.price{
+font-size:45px;
+font-weight:bold;
+margin:20px 0;
+color:#7c3aed;
+}
+
+.card ul{
+list-style:none;
+}
+
+.card ul li{
+padding:10px 0;
+}
+
+.buy{
+margin-top:20px;
+display:inline-block;
+padding:12px 25px;
+background:#2563eb;
+color:white;
+border-radius:30px;
+text-decoration:none;
+}
+
+.testimonial{
+text-align:center;
+}
+
+.testimonial img{
+width:90px;
+height:90px;
+border-radius:50%;
+margin-bottom:20px;
+}
+
+.testimonial p{
+font-style:italic;
+margin-bottom:15px;
+}
+
+.faq{
+max-width:800px;
+margin:auto;
+}
+
+details{
+background:white;
+padding:18px;
+margin-bottom:15px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,.08);
+cursor:pointer;
+}
+
+summary{
+font-weight:bold;
+}
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+.social{
+margin-top:20px;
+}
+
+.social a{
+display:inline-block;
+margin:10px;
+font-size:28px;
+color:white;
+transition:.3s;
+}
+
+.social a:hover{
+color:#38bdf8;
+transform:scale(1.2);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+<div class="logo">MyBrand</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#pricing">Pricing</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero" id="home">
+
+<div>
+
+<h1>Build Your Dream Website</h1>
+
+<p>Create stunning websites with modern design and responsive layouts.</p>
+
+<a href="#pricing" class="btn">Get Started</a>
+
+</div>
+
+</section>
+
+<section id="pricing">
+
+<h2 class="section-title">Pricing Plans</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Basic</h3>
+
+<div class="price">$19</div>
+
+<ul>
+<li>✔ 1 Website</li>
+<li>✔ Free Hosting</li>
+<li>✔ Email Support</li>
+</ul>
+
+<a href="#" class="buy">Choose Plan</a>
+
+</div>
+
+<div class="card">
+
+<h3>Professional</h3>
+
+<div class="price">$49</div>
+
+<ul>
+<li>✔ 10 Websites</li>
+<li>✔ Premium Hosting</li>
+<li>✔ 24/7 Support</li>
+</ul>
+
+<a href="#" class="buy">Choose Plan</a>
+
+</div>
+
+<div class="card">
+
+<h3>Enterprise</h3>
+
+<div class="price">$99</div>
+
+<ul>
+<li>✔ Unlimited Websites</li>
+<li>✔ Cloud Hosting</li>
+<li>✔ Dedicated Support</li>
+</ul>
+
+<a href="#" class="buy">Choose Plan</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="testimonials">
+
+<h2 class="section-title">Testimonials</h2>
+
+<div class="cards">
+
+<div class="card testimonial">
+
+<img src="https://i.pravatar.cc/100?img=1">
+
+<p>"Amazing website! The design is clean and very professional."</p>
+
+<h3>John Smith</h3>
+
+</div>
+
+<div class="card testimonial">
+
+<img src="https://i.pravatar.cc/100?img=2">
+
+<p>"Excellent service and fantastic customer support."</p>
+
+<h3>Sarah Lee</h3>
+
+</div>
+
+<div class="card testimonial">
+
+<img src="https://i.pravatar.cc/100?img=3">
+
+<p>"Highly recommend! My business grew after launching my site."</p>
+
+<h3>David Wilson</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="faq">
+
+<h2 class="section-title">Frequently Asked Questions</h2>
+
+<div class="faq">
+
+<details>
+
+<summary>How long does it take to build a website?</summary>
+
+<p>Usually between 3-7 days depending on project complexity.</p>
+
+</details>
+
+<details>
+
+<summary>Can I upgrade my plan later?</summary>
+
+<p>Yes. You can upgrade anytime without losing your data.</p>
+
+</details>
+
+<details>
+
+<summary>Do you provide customer support?</summary>
+
+<p>Yes, we provide email and premium support based on your plan.</p>
+
+</details>
+
+<details>
+
+<summary>Is my website mobile friendly?</summary>
+
+<p>Absolutely! Every website is fully responsive.</p>
+
+</details>
+
+</div>
+
+</section>
+
+<footer id="contact">
+
+<h2>Contact Us</h2>
+
+<p>Email: info@mybrand.com</p>
+
+<p>Phone: +1 234 567 890</p>
+
+<div class="social">
+
+<a href="#"><i class="fab fa-facebook"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-twitter"></i></a>
+
+<a href="#"><i class="fab fa-linkedin"></i></a>
+
+<a href="#"><i class="fab fa-github"></i></a>
+
+</div>
+
+<p style="margin-top:25px;">
+© 2025 MyBrand. All Rights Reserved.
+</p>
+
+</footer>
+
+<script>
+
+const buttons=document.querySelectorAll(".buy");
+
+buttons.forEach(btn=>{
+
+btn.addEventListener("click",function(e){
+
+e.preventDefault();
+
+alert("Thank you for choosing this plan!");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
