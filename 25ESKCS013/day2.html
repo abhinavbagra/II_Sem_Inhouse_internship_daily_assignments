@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile Page</title>
+    <style>
+        /* Modern CSS Reset & Variables */
+        :root {
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-muted: #666666;
+            --primary-color: #0056b3;
+            --primary-hover: #004085;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        /* Container Layout */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        section {
+            padding: 24px 0;
+        }
+
+        /* Distinct section dividers without harsh lines */
+        section:not(:last-child) {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Profile Header Styling */
+        #profile-header {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        #profile-header img {
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        #profile-header h1 {
+            margin: 0 0 8px 0;
+            color: #111111;
+            font-size: 2.2rem;
+        }
+
+        #profile-header p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        /* Typography */
+        h2 {
+            color: #222222;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Lists */
+        ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Professional Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: #444444;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:hover {
+            background-color: #fafbfc;
+        }
+
+        /* Clean Form Design */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #444444;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 14px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.15);
+        }
+
+        button[type="submit"] {
+            align-self: flex-start;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: var(--primary-hover);
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+
+        <section id="profile-header">
+            <img src="https://via.placeholder.com/150" alt="Student Profile Photo" width="150" height="150">
+            <h1>Practise</h1>
+            <p>Aspiring Full-Stack Web Developer | Computer Science Student</p>
+        </section>
+
+        <section id="education">
+            <h2>Education Background</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Degree / Certification</th>
+                        <th>Institution / School</th>
+                        <th>Passing Year</th>
+                        <th>Grade / Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>B.Tech in Computer Science</strong></td>
+                        <td>State University</td>
+                        <td>2027</td>
+                        <td>3.8 GPA</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Higher Secondary (12th Grade)</strong></td>
+                        <td>Greenwood Academy</td>
+                        <td>2023</td>
+                        <td>92%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>HyperText Markup Language (HTML5)</li>
+                <li>Cascading Style Sheets (CSS3)</li>
+                <li>Basic JavaScript & Logic Building</li>
+                <li>Git & GitHub Version Control</li>
+                <li>Responsive Design Foundations</li>
+            </ul>
+        </section>
+
+        <section id="favourite-website">
+            <h2>My Favourite Tech Resource</h2>
+            <p>When I am stuck on a coding problem or want to review documentation, I always visit 
+               <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a>.
+            </p>
+        </section>
+
+        <section id="contact-me">
+            <h2>Personal Information</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+                </div>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+    </main>
+
+</body>
+</html>
