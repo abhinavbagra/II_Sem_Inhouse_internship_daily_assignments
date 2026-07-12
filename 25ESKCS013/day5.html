@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusConnect Pro | Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .navbar {
+            background: rgba(15, 23, 42, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 160px 0 100px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+        .stat-card {
+            border: none;
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--bs-primary);
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .stat-card i {
+            font-size: 2rem;
+            opacity: 0.15;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+        .card {
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+        }
+        footer h3, footer h5 {
+            color: #ffffff;
+        }
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        footer a:hover {
+            color: #38bdf8;
+        }
+    </style>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+    <div class="container">
+        <a class="navbar-brand fw-extrabold d-flex align-items-center gap-2 fs-4" href="#">
+            <i class="fa-solid fa-graduation-cap text-warning"></i>
+            <span>Campus<span class="text-warning">Connect</span></span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+                <li class="nav-item">
+                    <a class="nav-link active px-3" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="#dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="#students">Students</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="#analytics">Analytics</a>
+                </li>
+                <li class="nav-item ms-lg-2">
+                    <button class="btn btn-sm btn-outline-warning rounded-pill px-3" id="darkModeBtn">
+                        <i class="fa-solid fa-moon me-1"></i> Mode
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero d-flex align-items-center">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <span class="badge rounded-pill bg-info bg-opacity-10 text-info px-3 py-2 fw-semibold mb-3">
+                    <i class="fa-solid fa-bolt me-1"></i> AI Powered Analytics Engine
+                </span>
+                <h1 class="display-4 fw-black tracking-tight mt-2 lh-sm">
+                    Manage Campus Lifecycle <br><span class="text-warning">Smarter & Faster</span>
+                </h1>
+                <p class="lead text-secondary-emphasis opacity-75 mt-4 fs-5 fw-light">
+                    Transform metrics into milestones. View dynamic configurations, perform real-time queries across departments, and compute CGPA trends elegantly.
+                </p>
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a href="#dashboard" class="btn btn-warning btn-lg px-4 py-3 fw-bold rounded-pill shadow">
+                        Get Started <i class="fa-solid fa-arrow-right ms-2 fs-6"></i>
+                    </a>
+                    <a href="#students" class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill">
+                        Directory
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center" data-aos="fade-left">
+                <div class="position-relative d-inline-block">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900" class="img-fluid rounded-4 shadow-2xl border border-secondary border-opacity-25 img-thumbnail" alt="Students Collaboration">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dashboard py-5" id="dashboard">
+    <div class="container py-4">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="fw-bold tracking-tight">System Matrix Overview</h2>
+                <p class="text-muted fs-6">Live status streams monitoring system metrics</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="card stat-card p-3 border-start border-primary border-4">
+                    <div class="card-body">
+                        <h6 class="text-uppercase tracking-wider text-muted small fw-bold">Active Records</h6>
+                        <h2 class="display-6 fw-bold my-2" id="studentCount">0</h2>
+                        <p class="mb-0 text-success small"><i class="fa-solid fa-arrow-up"></i> Registered Students</p>
+                        <i class="fa-solid fa-users text-primary text-opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card stat-card p-3 border-start border-danger border-4">
+                    <div class="card-body">
+                        <h6 class="text-uppercase tracking-wider text-muted small fw-bold">Bookmarks</h6>
+                        <h2 class="display-6 fw-bold my-2" id="favoriteCount">0</h2>
+                        <p class="mb-0 text-muted small">Starred Profiles</p>
+                        <i class="fa-solid fa-star text-danger text-opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card stat-card p-3 border-start border-success border-4">
+                    <div class="card-body">
+                        <h6 class="text-uppercase tracking-wider text-muted small fw-bold">Departments</h6>
+                        <h2 class="display-6 fw-bold my-2" id="departmentCount">6</h2>
+                        <p class="mb-0 text-muted small">Active Branches</p>
+                        <i class="fa-solid fa-building-columns text-success text-opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card stat-card p-3 border-start border-warning border-4">
+                    <div class="card-body">
+                        <h6 class="text-uppercase tracking-wider text-muted small fw-bold">Global CGPA</h6>
+                        <h2 class="display-6 fw-bold my-2" id="averageCgpa">0.0</h2>
+                        <p class="mb-0 text-warning small">Cumulative Average</p>
+                        <i class="fa-solid fa-chart-line text-warning text-opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="students py-5 bg-white border-top border-bottom" id="students">
+    <div class="container py-3">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-5 gap-3">
+            <div>
+                <h2 class="fw-bold m-0">Student Directory</h2>
+                <p class="text-muted m-0">Query index configurations and generate ledger reports</p>
+            </div>
+            <div>
+                <button class="btn btn-dark btn-md rounded-pill px-4 shadow-sm" id="exportPDF">
+                    <i class="fa-solid fa-file-pdf text-danger me-2"></i>Export Ledger Data
+                </button>
+            </div>
+        </div>
+
+        <div class="row g-3 mb-5 p-3 rounded-4 bg-light border">
+            <div class="col-lg-5">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
+                    <input type="text" class="form-control form-control-lg border-start-0 fs-6" id="searchBox" placeholder="Search parameters by name...">
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <select class="form-select form-select-lg fs-6" id="departmentFilter">
+                    <option value="All">All Clusters</option>
+                    <option value="CSE">Computer Science</option>
+                    <option value="IT">Information Technology</option>
+                    <option value="ECE">Electronics</option>
+                    <option value="ME">Mechanical</option>
+                    <option value="Civil">Civil</option>
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <select class="form-select form-select-lg fs-6" id="sortOption">
+                    <option value="az">Sort alphabetical (A-Z)</option>
+                    <option value="za">Sort alphabetical (Z-A)</option>
+                    <option value="high">Metric: Ascending Grade (CGPA)</option>
+                    <option value="low">Metric: Descending Grade (CGPA)</option>
+                </select>
+            </div>
+            <div class="col-lg-1">
+                <button class="btn btn-primary btn-lg w-100 rounded-3 shadow-sm" data-bs-toggle="modal" data-bs-target="#studentModal">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="row g-4" id="studentContainer">
+            </div>
+    </div>
+</section>
+
+<section class="analytics py-5" id="analytics">
+    <div class="container py-3">
+        <div class="row text-center mb-5">
+            <div class="col-lg-12">
+                <h2 class="fw-bold">Performance Analytics</h2>
+                <p class="text-muted">Top structural performers & activity updates</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-header bg-transparent py-3 fw-bold border-0 d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-trophy text-warning fs-4"></i> High Performer Context
+                    </div>
+                    <div class="card-body pt-0">
+                        <div id="topStudent" class="p-3 bg-light rounded-3 text-muted">
+                            Loading node information...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-header bg-transparent py-3 fw-bold border-0 d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-clock-rotate-left text-primary fs-5"></i> System Activity Stream
+                    </div>
+                    <div class="card-body pt-0">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item px-0 d-flex justify-content-between align-items-center text-muted">
+                                <span><i class="fa-solid fa-circle text-success me-2 small"></i>Student Node Appended</span>
+                                <small class="text-uppercase small fw-bold">Success</small>
+                            </li>
+                            <li class="list-group-item px-0 d-flex justify-content-between align-items-center text-muted">
+                                <span><i class="fa-solid fa-circle text-info me-2 small"></i>CGPA Database Compiled</span>
+                                <small class="text-uppercase small fw-bold">Updated</small>
+                            </li>
+                            <li class="list-group-item px-0 d-flex justify-content-between align-items-center text-muted">
+                                <span><i class="fa-solid fa-circle text-warning me-2 small"></i>User Bookmarks Altered</span>
+                                <small class="text-uppercase small fw-bold">Active</small>
+                            </li>
+                            <li class="list-group-item px-0 d-flex justify-content-between align-items-center text-muted">
+                                <span><i class="fa-solid fa-circle text-secondary me-2 small"></i>Dashboard Thread Initialized</span>
+                                <small class="text-uppercase small fw-bold">Online</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card shadow-sm border-0 p-4">
+                    <h4 class="fw-bold mb-4 text-center text-md-start"><i class="fa-solid fa-chart-bar text-info me-2"></i>Student Grading Distribution Plot</h4>
+                    <div style="position: relative; height:350px;">
+                        <canvas id="cgpaChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer pt-5 pb-4 border-top">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <h4 class="fw-bold text-white d-flex align-items-center gap-2">
+                    <i class="fa-solid fa-graduation-cap text-warning"></i> CampusConnect
+                </h4>
+                <p class="mt-3 text-secondary">
+                    An administrative ecosystem designed for campus monitoring optimization, built upon clean semantic layouts.
+                </p>
+            </div>
+            <div class="col-lg-2 offset-lg-1">
+                <h6 class="text-uppercase text-white tracking-wider small fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled d-flex flex-column gap-2 small">
+                    <li><a href="#">Home Base</a></li>
+                    <li><a href="#dashboard">Statistics</a></li>
+                    <li><a href="#students">Directory</a></li>
+                    <li><a href="#analytics">Performance Graphs</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2">
+                <h6 class="text-uppercase text-white tracking-wider small fw-bold mb-3">Infrastructure</h6>
+                <ul class="list-unstyled d-flex flex-column gap-2 small text-secondary">
+                    <li>Bootstrap 5.3</li>
+                    <li>Vanilla Dynamic JS</li>
+                    <li>jQuery Runtime Stack</li>
+                    <li>FontAwesome Vector Toolkit</li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h6 class="text-uppercase text-white tracking-wider small fw-bold mb-3">Enterprise Contact</h6>
+                <p class="small text-secondary mb-3">campusconnect@example.com</p>
+                <div class="d-flex gap-3 fs-5">
+                    <a href="#" class="text-secondary"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-secondary"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-secondary"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-secondary"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr class="border-secondary opacity-25 my-4">
+        <p class="text-center small text-secondary mb-0">
+            &copy; 2026 CampusConnect Environment Core. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+
+<div class="modal fade" id="studentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow-lg rounded-4">
+            <div class="modal-header border-bottom px-4">
+                <h5 class="modal-title fw-bold" id="modalTitle"><i class="fa-solid fa-user-plus me-2 text-primary"></i>Modify Student Profile Data</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label small fw-bold text-muted">Full Name</label>
+                        <input id="name" class="form-control form-control-lg fs-6" placeholder="Jane Doe">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label small fw-bold text-muted">City Reference</label>
+                        <input id="city" class="form-control form-control-lg fs-6" placeholder="San Francisco">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label small fw-bold text-muted">Email Address</label>
+                        <input id="email" type="email" class="form-control form-control-lg fs-6" placeholder="jane@example.edu">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label small fw-bold text-muted">Phone Number</label>
+                        <input id="phone" type="tel" class="form-control form-control-lg fs-6" placeholder="+1 (555) 000-0000">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label small fw-bold text-muted">Department</label>
+                        <select id="department" class="form-select form-select-lg fs-6">
+                            <option>CSE</option>
+                            <option>IT</option>
+                            <option>ECE</option>
+                            <option>Mechanical</option>
+                            <option>Civil</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label small fw-bold text-muted">Enrollment Year</label>
+                        <select id="year" class="form-select form-select-lg fs-6">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label small fw-bold text-muted">Current CGPA</label>
+                        <input id="cgpa" type="number" step="0.01" min="0" max="10" class="form-control form-control-lg fs-6" placeholder="4.00">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label small fw-bold text-muted">Profile Avatar Vector URL</label>
+                        <input id="image" class="form-control form-control-lg fs-6" placeholder="https://domain.com/avatar.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-top px-4 bg-light rounded-bottom-4">
+                <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary rounded-pill px-4" id="saveStudent">Commit Record</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast border-0 shadow-lg rounded-3" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-dark text-white rounded-top-3">
+            <i class="fa-solid fa-bell text-warning me-2"></i>
+            <strong class="me-auto">CampusConnect Runtime</strong>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body bg-white rounded-bottom-3" id="toastBody">
+            Execution successful.
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+</script>
+
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
